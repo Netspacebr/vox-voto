@@ -3,7 +3,7 @@
 body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background-color: #ffffff; color: #1a1a1a; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-/* 2. HERO SECTION (Imutável) */
+/* 2. HERO SECTION (Imutável conforme especificações anteriores) */
 .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 20px; }
 .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: -1; }
@@ -12,18 +12,18 @@ body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background-color:
 .highlight-blue { color: #00d4ff; }
 .hero-text { font-weight: 400; font-size: 20px; line-height: 37px; max-width: 850px; margin: 0 auto; }
 
-/* 3. SEGUNDA ABA (BRANCA - GRID 4 COLUNAS) */
+/* 3. SEGUNDA ABA (BRANCA - GRID 4 COLUNAS 2+2 CORRIGIDO) */
 .section-white { background-color: #ffffff; padding: 120px 0; }
 
 /* Somente o Título Centralizado */
-.header-centered-only { text-align: center; width: 100%; margin-bottom: 80px; }
+.header-centered-only { text-align: center; width: 100%; margin-bottom: 100px; /* Espaço generoso antes do grid */ }
 .title-main { font-weight: 900; font-size: 48px; line-height: 62px; color: rgb(29, 30, 32); }
 
-/* Grid 4 Colunas */
-.grid-4-columns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 60px; align-items: flex-start; margin-bottom: 80px; }
+/* Grid 4 Colunas - Ajuste de Alinhamento */
+.grid-4-columns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 60px; /* Gap generoso para respiro */ align-items: start; /* Mantém alinhado ao topo, mas os filhos preencherão a altura */ margin-bottom: 80px; }
 
 /* Colunas da Esquerda (Subtítulo + Tópicos) */
-.text-column-grid { grid-column: span 2; text-align: left; }
+.text-column-grid { grid-column: span 2; text-align: left; /* Garante alinhamento à esquerda */ }
 
 .subtitle-intro { font-weight: 400; font-size: 24px; line-height: 31px; color: rgb(26, 26, 26); margin-bottom: 40px; }
 
@@ -33,43 +33,28 @@ body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background-color:
 /* Lista com Bullets */
 .topics-list { list-style: none; padding-left: 10px; }
 .topics-list li { font-weight: 400; font-size: 16px; line-height: 24px; color: rgb(29, 30, 32); margin-bottom: 20px; position: relative; padding-left: 25px; }
-
-/* O Bullet (Ponto) customizado */
 .topics-list li::before { content: "•"; color: #00d4ff; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; position: absolute; left: 0; font-size: 20px; }
 .topics-list li strong { font-weight: 700; color: rgb(29, 30, 32); }
 
-/* Colunas da Direita (Imagem) */
-.image-column-grid { grid-column: span 2; text-align: right; }
-.img-right { width: 100%; max-width: 480px; height: auto; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.1); }
+/* Colunas da Direita (Imagem) - Ocupa as outras 2 colunas */
+.image-column-grid { grid-column: span 2; display: flex; justify-content: flex-end; /* Alinha a imagem à direita do grid */ align-items: stretch; /* Tenta preencher a altura se necessário */ }
+
+/* Imagem Ajustada para Peso Visual */
+.img-right { width: 100%; /* Ocupa 100% da largura das suas 2 colunas */ max-width: 580px; /* Aumentei o max-width para equiparar ao volume do texto */ height: auto; /* Mantém proporção */ border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.1); object-fit: cover; /* Garante que a imagem preencha o espaço se a altura variar */ }
 
 /* CTA CENTRALIZADO (PINK/MAGENTA) */
 .cta-wrapper-centered { text-align: center; }
-.btn-principal {
-    display: inline-block;
-    padding: 20px 50px;
-    background: transparent; /* Fundo transparente ou gradiente se preferir, mas foco na cor do texto */
-    color: rgb(244, 73, 244) !important; /* A cor solicitada */
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: normal;
-    text-transform: uppercase;
-    transition: 0.3s ease;
-    border: 3px solid rgb(244, 73, 244); /* Borda para dar peso ao botão */
-    border-radius: 50px;
-}
-
+.btn-principal { display: inline-block; padding: 20px 50px; background: transparent; color: rgb(244, 73, 244) !important; text-decoration: none; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 24px; line-height: normal; text-transform: uppercase; transition: 0.3s ease; border: 3px solid rgb(244, 73, 244); border-radius: 50px; cursor: pointer; }
 .btn-principal:hover { transform: scale(1.05); background: rgb(244, 73, 244); color: white !important; }
+
+/* TERCEIRA ABA (PRETA) */
+.section-black { background-color: #0f1113; color: white; padding: 100px 0; text-align: center; }
+.authority-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+.authority-grid img { width: 100%; height: 450px; object-fit: cover; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
 
 /* FOOTER */
 .footer-black { background-color: #0f1113; padding: 80px 0; text-align: center; color: white; border-top: 1px solid #222; }
 .logo-footer { width: 180px; margin-bottom: 25px; }
 
 /* RESPONSIVIDADE */
-@media (max-width: 900px) {
-    .grid-4-columns { grid-template-columns: 1fr; gap: 40px; }
-    .text-column-grid, .image-column-grid { grid-column: span 1; text-align: center; }
-    .topics-list { text-align: left; }
-    .btn-principal { font-size: 20px; padding: 15px 30px; }
-}
+@media (max-width: 900px) { .grid-4-columns { grid-template-columns: 1fr; gap: 40px; } .text-column-grid, .image-column-grid { grid-column: span 1; text-align: center; } .topics-list { text-align: left; } .btn-principal { font-size: 20px; padding: 15px 30px; } }
