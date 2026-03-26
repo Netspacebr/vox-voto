@@ -1,4 +1,5 @@
-/* 1. RESET E FONTES */
+/* TESTE DE CONEXÃO VOX */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,161 +7,63 @@
 }
 
 body {
+    background-color: #0f1113; /* Fundo escuro profundo */
+    color: white;
     font-family: 'Poppins', sans-serif;
-    background-color: #0f1113; /* Fundo profundo para destacar o Cyan do logo */
-    color: #ffffff;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* 2. HERO SECTION (VÍDEO E IMPACTO) */
-.hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 0 20px;
+    min-height: 100vh;
 }
 
+/* Forçar o vídeo a ocupar a tela toda */
 .hero-video {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -2;
+    z-index: -1;
 }
 
+/* Escurecer o vídeo para o texto aparecer */
 .hero-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(15, 17, 19, 1) 0%, rgba(15, 17, 19, 0.4) 100%);
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
 }
 
+/* Conteúdo centralizado */
 .hero-content {
-    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
 }
 
 .logo {
-    width: 180px; /* Tamanho otimizado para mobile */
-    margin-bottom: 2rem;
-    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5));
+    width: 200px;
+    margin-bottom: 20px;
 }
 
 h1 {
     font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    letter-spacing: -1px;
-}
-
-p {
-    font-size: 1.1rem;
-    color: #a0a0a0;
-    margin-bottom: 2rem;
+    margin-bottom: 15px;
 }
 
 .btn-principal {
     display: inline-block;
-    padding: 16px 40px;
-    background: linear-gradient(90deg, #1a73e8 0%, #00d4ff 100%); /* Gradiente seguindo seu logo */
-    color: #fff;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: #00d4ff; /* Cyan vibrante do seu logo */
+    color: black;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-principal:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
-}
-
-/* 3. SEÇÃO DE DEMONSTRAÇÃO (GRID) */
-.demo-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.demo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.demo-item img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    transition: transform 0.4s ease;
-}
-
-.demo-item:hover img {
-    transform: scale(1.03);
-}
-
-/* 4. SEÇÃO DE AUTORIDADE E IMAGENS */
-.authority {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.card-large {
-    background: #1a1d21;
-    border-radius: 24px;
-    overflow: hidden;
-    margin-bottom: 30px;
-}
-
-.card-large img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.card-text {
-    padding: 40px;
-}
-
-.image-row {
-    display: flex;
-    gap: 20px;
-}
-
-.image-row img {
-    width: 50%;
-    border-radius: 24px;
-    object-fit: cover;
-}
-
-/* 5. FOOTER */
-footer {
-    padding: 80px 20px 40px;
-    text-align: center;
-    border-top: 1px solid #222;
-}
-
-.footer-img {
-    width: 150px;
-    opacity: 0.6;
-    margin-bottom: 20px;
-}
-
-/* 6. RESPONSIVIDADE PARA TABLET/DESKTOP */
-@media (min-width: 768px) {
-    h1 { font-size: 4rem; }
-    .logo { width: 240px; }
-    .image-row img { height: 400px; }
+    font-weight: bold;
 }
