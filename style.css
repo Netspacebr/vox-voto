@@ -3,38 +3,46 @@
 body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
 
-/* HERO SECTION */
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-.hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: -1; }
-
-.logo-hero-giant {
-    width: 450px; /* Triplicado (era 150px) */
-    margin-bottom: 40px;
-}
-
+/* TÍTULO HERO (POPPINS 900 / 64PX / 83PX) */
 .hero-title {
-    font-size: 2.3rem; /* Aumentado um ponto */
-    font-weight: 700;
-    margin-bottom: 30px;
-    max-width: 900px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 83px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 35px; /* Espaço generoso antes do texto */
+    max-width: 1000px;
+    letter-spacing: -1px;
 }
-.highlight-blue { color: #00d4ff; }
 
+/* TEXTO DESCRIÇÃO HERO (POPPINS 400 / 20PX / 37PX) */
 .hero-text {
-    font-size: 1.05rem; /* Aumentado um ponto */
-    color: #f0f0f0;
-    max-width: 800px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 37px;
+    color: rgb(255, 255, 255);
+    max-width: 850px; /* Ajustado para manter linhas de leitura confortáveis */
     margin: 0 auto;
-    line-height: 1.7;
+    text-align: center;
+}
+
+/* AJUSTE RESPONSIVO (ESSENCIAL PARA MOBILE) */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 36px;
+        line-height: 46px;
+        margin-bottom: 20px;
+    }
+    .hero-text {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .logo-hero-giant {
+        width: 300px; /* Mantém o logo imponente mas contido na tela */
+    }
 }
 
 /* SEÇÃO ZEBRADA E LAYOUT SPLIT */
