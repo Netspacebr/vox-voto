@@ -18,7 +18,7 @@ body {
     padding: 0 40px;
 }
 
-/* 2. HERO SECTION */
+/* 2. HERO SECTION (Imutável conforme especificações anteriores) */
 .hero {
     position: relative;
     height: 100vh;
@@ -77,17 +77,17 @@ body {
     margin: 0 auto;
 }
 
-/* 3. SEGUNDA ABA (BRANCA - NOVAS ESPECIFICAÇÕES E CENTRALIZAÇÃO) */
+/* 3. SEGUNDA ABA (BRANCA - GRID DE 4 COLUNAS 2+2) */
 .section-white {
     background-color: #ffffff;
-    padding: 120px 0; /* Aumentei um pouco o padding para dar mais ar */
+    padding: 120px 0;
 }
 
-/* Cabeçalho da Aba 2 Centralizado */
+/* Cabeçalho Centralizado (Acima de Tudo na Aba) */
 .header-centered {
     text-align: center;
-    max-width: 900px;
-    margin: 0 auto 80px; /* Mais espaço antes das colunas */
+    max-width: 950px;
+    margin: 0 auto 100px; /* Espaço generoso antes do grid */
 }
 
 .title-main {
@@ -105,16 +105,18 @@ body {
     color: rgb(26, 26, 26);
 }
 
-/* Grid de Conteúdo (Texto à esquerda, Celular à direita) */
-.split-layout {
-    display: flex;
+/* O Segredo: Grid de 4 Colunas */
+.grid-4-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas iguais */
+    gap: 60px; /* Espaço entre as colunas */
     align-items: center; /* Alinha verticalmente pelo centro */
-    gap: 80px;
     margin-bottom: 80px; /* Espaço para o botão abaixo */
 }
 
-.text-column {
-    flex: 1;
+/* Coluna de Texto: Ocupa as 2 primeiras colunas */
+.text-column-grid {
+    grid-column: span 2; /* Estende por 2 colunas */
 }
 
 .bold-call {
@@ -137,15 +139,95 @@ body {
     margin-bottom: 20px;
 }
 
-/* Texto antes dos dois pontos em 700 */
 .topics-list li strong {
     font-weight: 700;
     color: rgb(29, 30, 32);
 }
 
-.image-column {
-    flex: 1; /* Mesma proporção para equiparar tamanhos */
-    text-align: right;
+/* Coluna de Imagem: Ocupa as 2 colunas restantes */
+.image-column-grid {
+    grid-column: span 2; /* Estende por 2 colunas */
+    text-align: right; /* Alinha a imagem à direita do grid */
 }
 
 .img-right {
+    width: 100%; /* Ocupa 100% da largura das suas 2 colunas */
+    max-width: 480px; /* Tamanho máximo de controle para não ficar enorme */
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+}
+
+/* Centralização do CTA (Abaixo do Grid) */
+.cta-wrapper-centered {
+    text-align: center;
+}
+
+.btn-principal {
+    display: inline-block;
+    padding: 20px 50px;
+    background: linear-gradient(90deg, #1a73e8 0%, #00d4ff 100%);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.btn-principal:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.4);
+}
+
+/* 4. TERCEIRA ABA (PRETA) */
+.section-black {
+    background-color: #0f1113;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.authority-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.authority-grid img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+/* 5. FOOTER */
+.footer-black {
+    background-color: #0f1113;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.logo-footer {
+    width: 180px;
+}
+
+/* 6. RESPONSIVIDADE (MOBILE-FIRST) */
+@media (max-width: 900px) {
+    .grid-4-columns {
+        grid-template-columns: 1fr; /* No mobile, vira uma coluna só */
+        gap: 40px;
+    }
+    .text-column-grid, .image-column-grid {
+        grid-column: span 1; /* Ocupa a coluna única inteira */
+        text-align: center;
+    }
+    .img-right {
+        max-width: 350px; /* Reduz a imagem no mobile */
+        margin: 0 auto;
+    }
+    .title-main { font-size: 32px; line-height: 40px; }
+}
