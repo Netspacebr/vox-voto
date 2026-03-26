@@ -1,104 +1,229 @@
-/* RESET E FUNDAÇÃO */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+/* 1. RESET E FUNDAÇÃO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* TÍTULO HERO (POPPINS 900 / 64PX / 83PX) */
-.hero-title {
+body {
     font-family: 'Poppins', sans-serif;
-    font-style: normal;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 2. HERO SECTION (COM VÍDEO E TIPOGRAFIA DE IMPACTO) */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 0 20px;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Escurece o vídeo para o texto brilhar */
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 1100px;
+}
+
+/* Logo Triplicado */
+.logo-hero-giant {
+    width: 450px; 
+    margin-bottom: 40px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+}
+
+/* Título Poppins 900 - 64px / 83px */
+.hero-title {
     font-weight: 900;
     font-size: 64px;
     line-height: 83px;
     color: rgb(255, 255, 255);
-    margin-bottom: 35px; /* Espaço generoso antes do texto */
-    max-width: 1000px;
-    letter-spacing: -1px;
+    margin-bottom: 35px;
+    letter-spacing: -1.5px;
 }
 
-/* TEXTO DESCRIÇÃO HERO (POPPINS 400 / 20PX / 37PX) */
+.highlight-blue {
+    color: #00d4ff; /* Azul claro do logo */
+}
+
+/* Texto Hero Poppins 400 - 20px / 37px */
 .hero-text {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 37px;
     color: rgb(255, 255, 255);
-    max-width: 850px; /* Ajustado para manter linhas de leitura confortáveis */
+    max-width: 850px;
     margin: 0 auto;
-    text-align: center;
 }
 
-/* AJUSTE RESPONSIVO (ESSENCIAL PARA MOBILE) */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 36px;
-        line-height: 46px;
-        margin-bottom: 20px;
-    }
-    .hero-text {
-        font-size: 16px;
-        line-height: 28px;
-    }
-    .logo-hero-giant {
-        width: 300px; /* Mantém o logo imponente mas contido na tela */
-    }
+/* 3. SEGUNDA ABA (BRANCA COM COLUNAS) */
+.section-white {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 100px 0;
 }
 
-/* SEÇÃO ZEBRADA E LAYOUT SPLIT */
-.zebra-section { padding: 100px 0; text-align: left; }
-.section-white { background: #ffffff; color: #1a1a1a; }
-.zebra-section:nth-child(odd):not(.hero) { background-color: #0f1113; color: white; }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
 
 .split-layout {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 80px;
 }
 
-.text-column { flex: 1.2; }
-.image-column { flex: 0.8; text-align: right; }
+.text-column {
+    flex: 1.2;
+}
 
-.title-main { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
-.subtitle-intro { font-size: 1.2rem; margin-bottom: 25px; color: #555; }
-.section-white .subtitle-intro { color: #555; }
+.image-column {
+    flex: 0.8;
+    text-align: right;
+}
 
-.bold-call { font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; }
+.title-main {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
 
-.topics-list { list-style: none; margin-bottom: 40px; }
-.topics-list li { margin-bottom: 15px; font-size: 1rem; line-height: 1.5; }
+.subtitle-intro {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: #444;
+}
 
+.bold-call {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.topics-list {
+    list-style: none;
+    margin-bottom: 45px;
+}
+
+.topics-list li {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.topics-list li strong {
+    font-weight: 700;
+}
+
+/* Botão Interface Modelo */
 .btn-principal {
     display: inline-block;
     padding: 18px 45px;
     background: linear-gradient(90deg, #1a73e8 0%, #00d4ff 100%);
-    color: white;
+    color: white !important;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
     text-transform: uppercase;
     transition: 0.3s ease;
 }
-.btn-principal:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,212,255,0.3); }
+
+.btn-principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+}
 
 .img-right {
     max-width: 100%;
     border-radius: 30px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
-/* GRID DE AUTORIDADE (TERCEIRA ABA) */
-.authority-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-.authority-grid img { width: 100%; border-radius: 20px; object-fit: cover; height: 400px; }
+/* 4. TERCEIRA ABA (PRETA) */
+.section-black {
+    background-color: #0f1113;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
 
-/* FOOTER */
-.footer-black { background: #0f1113; padding: 60px 0; text-align: center; color: white; }
-.logo-footer { width: 180px; margin-bottom: 20px; }
+.authority-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
 
-/* RESPONSIVIDADE */
+.authority-grid img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+/* 5. FOOTER (PRETO) */
+.footer-black {
+    background-color: #0f1113;
+    color: #888;
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.logo-footer {
+    width: 180px;
+    margin-bottom: 25px;
+}
+
+/* 6. RESPONSIVIDADE (MOBILE) */
 @media (max-width: 768px) {
-    .split-layout { flex-direction: column; text-align: center; }
-    .image-column { text-align: center; }
-    .logo-hero-giant { width: 80%; }
-    .hero-title { font-size: 1.8rem; }
+    .hero-title {
+        font-size: 38px;
+        line-height: 48px;
+    }
+    .hero-text {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .logo-hero-giant {
+        width: 80%;
+    }
+    .split-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .image-column {
+        text-align: center;
+    }
+    .authority-grid {
+        grid-template-columns: 1fr;
+    }
 }
