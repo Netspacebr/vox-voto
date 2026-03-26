@@ -7,13 +7,18 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
     background-color: #ffffff;
     color: #1a1a1a;
-    line-height: 1.6;
-    overflow-x: hidden;
 }
 
-/* 2. HERO SECTION (COM VÍDEO E TIPOGRAFIA DE IMPACTO) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* 2. HERO SECTION */
 .hero {
     position: relative;
     height: 100vh;
@@ -41,22 +46,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75); /* Escurece o vídeo para o texto brilhar */
+    background: rgba(0, 0, 0, 0.75);
     z-index: -1;
 }
 
-.hero-content {
-    max-width: 1100px;
-}
-
-/* Logo Triplicado */
 .logo-hero-giant {
     width: 450px; 
     margin-bottom: 40px;
-    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
 }
 
-/* Título Poppins 900 - 64px / 83px */
 .hero-title {
     font-weight: 900;
     font-size: 64px;
@@ -67,10 +65,9 @@ body {
 }
 
 .highlight-blue {
-    color: #00d4ff; /* Azul claro do logo */
+    color: #00d4ff;
 }
 
-/* Texto Hero Poppins 400 - 20px / 37px */
 .hero-text {
     font-weight: 400;
     font-size: 20px;
@@ -80,150 +77,75 @@ body {
     margin: 0 auto;
 }
 
-/* 3. SEGUNDA ABA (BRANCA COM COLUNAS) */
+/* 3. SEGUNDA ABA (BRANCA - NOVAS ESPECIFICAÇÕES E CENTRALIZAÇÃO) */
 .section-white {
     background-color: #ffffff;
-    color: #1a1a1a;
-    padding: 100px 0;
+    padding: 120px 0; /* Aumentei um pouco o padding para dar mais ar */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.split-layout {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-}
-
-.text-column {
-    flex: 1.2;
-}
-
-.image-column {
-    flex: 0.8;
-    text-align: right;
+/* Cabeçalho da Aba 2 Centralizado */
+.header-centered {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 80px; /* Mais espaço antes das colunas */
 }
 
 .title-main {
-    font-size: 2.8rem;
     font-weight: 900;
+    font-size: 48px;
+    line-height: 62px;
+    color: rgb(29, 30, 32);
     margin-bottom: 25px;
-    line-height: 1.2;
 }
 
 .subtitle-intro {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-    color: #444;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: rgb(26, 26, 26);
+}
+
+/* Grid de Conteúdo (Texto à esquerda, Celular à direita) */
+.split-layout {
+    display: flex;
+    align-items: center; /* Alinha verticalmente pelo centro */
+    gap: 80px;
+    margin-bottom: 80px; /* Espaço para o botão abaixo */
+}
+
+.text-column {
+    flex: 1;
 }
 
 .bold-call {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 26px;
+    color: rgb(26, 26, 26);
+    margin-bottom: 30px;
 }
 
 .topics-list {
     list-style: none;
-    margin-bottom: 45px;
 }
 
 .topics-list li {
-    margin-bottom: 15px;
-    font-size: 1.05rem;
-    line-height: 1.6;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(29, 30, 32);
+    margin-bottom: 20px;
 }
 
+/* Texto antes dos dois pontos em 700 */
 .topics-list li strong {
     font-weight: 700;
+    color: rgb(29, 30, 32);
 }
 
-/* Botão Interface Modelo */
-.btn-principal {
-    display: inline-block;
-    padding: 18px 45px;
-    background: linear-gradient(90deg, #1a73e8 0%, #00d4ff 100%);
-    color: white !important;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: 0.3s ease;
-}
-
-.btn-principal:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+.image-column {
+    flex: 1; /* Mesma proporção para equiparar tamanhos */
+    text-align: right;
 }
 
 .img-right {
-    max-width: 100%;
-    border-radius: 30px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-}
-
-/* 4. TERCEIRA ABA (PRETA) */
-.section-black {
-    background-color: #0f1113;
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-}
-
-.authority-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.authority-grid img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 24px;
-}
-
-/* 5. FOOTER (PRETO) */
-.footer-black {
-    background-color: #0f1113;
-    color: #888;
-    padding: 60px 0;
-    text-align: center;
-    border-top: 1px solid #222;
-}
-
-.logo-footer {
-    width: 180px;
-    margin-bottom: 25px;
-}
-
-/* 6. RESPONSIVIDADE (MOBILE) */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 38px;
-        line-height: 48px;
-    }
-    .hero-text {
-        font-size: 16px;
-        line-height: 28px;
-    }
-    .logo-hero-giant {
-        width: 80%;
-    }
-    .split-layout {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-    .image-column {
-        text-align: center;
-    }
-    .authority-grid {
-        grid-template-columns: 1fr;
-    }
-}
