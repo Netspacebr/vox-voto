@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOX - Capital Político</title>
+    <title>VOX - Aumente seu capital político</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
@@ -14,59 +14,62 @@
 <body>
 
     <section class="hero">
-        
-        <video autoplay muted loop playsinline poster="img/palanque.webp" class="hero-video">
+        <video autoplay muted loop playsinline class="hero-video">
             <source src="video/video.mp4" type="video/mp4">
         </video>
-        
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
+            <img src="img/logo-contorno.png" alt="Logo VOX Contorno" class="logo-hero">
             
-            <img src="img/logo.svg" alt="Logo VOX" class="logo">
+            <h1 class="hero-title">
+                <span class="highlight-blue">VOX:</span> Aumente seu capital político. Seu eleitor a um toque de distância.
+            </h1>
             
-            <h1>Seu futuro político passa pelo digital</h1>
+            <p class="hero-text">
+                “Em um cenário político cada vez mais digital, estar próximo do eleitor exige presença, organização e clareza. O VOX é sua central de comunicação oficial. Reúna todas as suas redes, propostas, petições, campanhas, doações e canais de contato em um só lugar. Fácil de compartilhar, confiável para o público e totalmente personalizado com sua identidade.”
+            </p>
             
-            <p>Conecte-se com seu eleitor a um toque de distância.</p>
-            
-            <div class="cta-area">
-                <a href="#interface" class="btn-principal">Conheça a Interface</a>
-            </div>
+            <a href="#demo" class="btn-principal">Conheça a Interface</a>
         </div>
     </section>
 
-    <section id="interface" class="demo-section">
-        <h2>A Interface em Ação</h2>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <img src="img/homem-celular.webp" alt="Interface VOX no celular">
-                <p>Engajamento direto e tempo real.</p>
-            </div>
-            <div class="demo-item">
-                <img src="img/mulher-celular.webp" alt="Acesso Mobile">
-                <p>O eleitor participa de qualquer lugar.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="authority">
-        <div class="card-large">
-            <img src="img/palanque.webp" alt="Presença Política">
-            <div class="card-text">
-                <h3>Do Local ao Nacional</h3>
-                <p>Soluções escaláveis para vereadores, senadores e presidência.</p>
-            </div>
-        </div>
+    <main class="content-wrapper">
         
-        <div class="image-row">
-            <img src="img/multidao.webp" alt="Alcance de Eleitores">
-            <img src="img/politicos.webp" alt="Gestão de Campanha">
-        </div>
-    </section>
+        <section id="demo" class="zebra-section">
+            <div class="container">
+                <h2>Sua Interface Digital</h2>
+                <div class="demo-grid">
+                    <img src="img/homem-celular.webp" alt="Demonstração VOX">
+                    <img src="img/mulher-celular.webp" alt="Acesso Eleitor">
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <img src="img/redes-em-blocos.webp" alt="Redes Sociais" class="footer-img">
-        <p>&copy; 2026 VOX - Tecnologia para Capital Político.</p>
+        <section class="zebra-section">
+            <div class="container">
+                <h2>Sua Presença em Destaque</h2>
+                <div class="authority-grid">
+                    <img src="img/palanque.webp" alt="Palanque Político">
+                    <img src="img/multidao.webp" alt="Alcance de Eleitores">
+                </div>
+            </div>
+        </section>
+
+        <section class="zebra-section">
+            <div class="container">
+                <h2>Públicos e Gestão</h2>
+                <img src="img/politicos.webp" alt="Gestão de Campanha" class="img-full">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-black">
+        <div class="container">
+            <img src="img/logo.svg" alt="Logo VOX" class="logo-footer">
+            <p>&copy; 2026 VOX - Tecnologia para Capital Político.</p>
+        </div>
     </footer>
 
 </body>
